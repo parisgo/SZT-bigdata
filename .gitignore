@@ -1,3 +1,4 @@
 *.idea/
 *target/
 *.iml
+.file/2018record3.jsons

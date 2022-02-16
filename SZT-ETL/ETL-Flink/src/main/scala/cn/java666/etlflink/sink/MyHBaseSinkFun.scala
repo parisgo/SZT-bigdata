@@ -31,7 +31,7 @@ case class MyHBaseSinkFun(tbNameStr: String, ns: String = "default", versions: I
 	var conn: Connection = _
 	var table: Table = _
 	
-	override def invoke(value: String, context: SinkFunction.Context[_]): Unit = {
+	override def invoke(value: String, context: SinkFunction.Context): Unit = {
 		insert(value)
 		log.warn("写入 hbase 成功 [{}]", value)
 	}

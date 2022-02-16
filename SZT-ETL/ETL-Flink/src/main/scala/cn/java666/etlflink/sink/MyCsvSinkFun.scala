@@ -18,7 +18,7 @@ import org.apache.flink.streaming.api.functions.sink.SinkFunction
 case class MyCsvSinkFun(day: String) extends SinkFunction[String] {
 	val SAVE_PATH = "/tmp/szt-data/szt-data_" + day + ".csv"
 	
-	override def invoke(value: String, context: SinkFunction.Context[_]): Unit = {
+	override def invoke(value: String, context: SinkFunction.Context): Unit = {
 		// 11 个字段
 		val json = JSON.parseObject(value)
 		
