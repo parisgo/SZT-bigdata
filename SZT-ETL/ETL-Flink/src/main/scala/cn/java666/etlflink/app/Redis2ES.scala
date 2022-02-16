@@ -37,13 +37,13 @@ object Redis2ES {
 		env.setParallelism(1)
 		
 		val hosts = List[HttpHost](
-			new HttpHost("cdh231", 9200),
-			new HttpHost("cdh232", 9200),
-			new HttpHost("cdh233", 9200)
+			new HttpHost("localhost", 9200)
+//			new HttpHost("cdh232", 9200),
+//			new HttpHost("cdh233", 9200)
 		)
 		
 		val esSink = new ElasticsearchSink.Builder(
-			hosts, new MyESSinkFun("szt-data")
+			hosts, new MyESSinkFun("test_szt-data")
 		).build
 		
 		env.addSource(new MyRedisSourceFun)

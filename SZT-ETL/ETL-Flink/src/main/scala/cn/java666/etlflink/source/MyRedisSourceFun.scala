@@ -37,6 +37,7 @@ case class MyRedisSourceFun() extends RichSourceFunction[String] {
 			array.foreach(x => {
 				val xStr = x.toString
 				val data = JSON.parseObject(xStr)
+				System.out.println(data)
 				//if (data.size() != 11 && data.size() != 9) { //这里长度不统一，9|11
 				if (data.size() != 11) { //这里长度不统一，9|11
 					//System.err.println(" data error ------------------ x=" + x)// TODO 可选是否打印脏数据
